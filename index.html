@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árboles senlleiras</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="main-header">
+            <h1 class="main-header__title title" v-bind:title="titulo">
+                {{titulo}}
+            </h1>
+            <p class="main-header__description">
+                {{descripcion}}
+            </p>
+            <figure class="main-header__img">
+                <a target="_blank" :href="figure.url"><img class="image" v-bind:src="figure.imagen" alt=""></a>
+                <figcaption>
+                    {{figure.especie}}
+                    <mark v-show="figure.autoctonoBool">Autóctono</mark>
+
+                    <strong v-if="figure.valoracion>3">
+                        Muy interesante
+                    </strong>
+                    <strong v-else-if="figure.valoracion>1">
+                        Interesante
+                    </strong>
+                    <strong v-else="figure.valoracion>3">
+                        poco interesante interesante
+                    </strong>
+                </figcaption>
+            </figure>
+        </header>
+    </div>
+</body>
+
+</html>
