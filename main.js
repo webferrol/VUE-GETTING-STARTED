@@ -8,7 +8,14 @@ const app = Vue.createApp({
                 especie: 'Quercus robur, L.',
                 url: 'https://cmatv.xunta.gal/seccion-organizacion/c/CMAOT_DX_Conservacion_Natureza?content=Direccion_Xeral_Conservacion_Natureza/Biodiversidade/seccion.html&sub=Arbores_senlleiras/',
                 autoctonoBool: true,
-                valoracion: 5
+                valoracion: 5,
+                detalles:[
+                    'Hoja caduca','Copa ancha','Hoja lobulada'
+                ],
+                nombresComunes: [
+                    {id:1,nombre:'Carballo'},
+                    {id:2, nombre: 'Roble'}
+                ]
             }
             
         }

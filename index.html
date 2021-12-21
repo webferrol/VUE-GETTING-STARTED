@@ -19,25 +19,40 @@
             </h1>
             <p class="main-header__description">
                 {{descripcion}}
-            </p>
-            <figure class="main-header__img">
-                <a target="_blank" :href="figure.url"><img class="image" v-bind:src="figure.imagen" alt=""></a>
-                <figcaption>
-                    {{figure.especie}}
-                    <mark v-show="figure.autoctonoBool">Autóctono</mark>
-
-                    <strong v-if="figure.valoracion>3">
-                        Muy interesante
-                    </strong>
-                    <strong v-else-if="figure.valoracion>1">
-                        Interesante
-                    </strong>
-                    <strong v-else="figure.valoracion>3">
-                        poco interesante interesante
-                    </strong>
-                </figcaption>
-            </figure>
+            </p>            
         </header>
+        <main class="main-content">
+            <article class="main-content content">
+                <header class="main-content__header">
+                    <h2 class="content__title">
+                        {{figure.especie}}
+                    </h2>
+                    <div role="list" class="comunes">
+                        <span role="listitem" v-for="item in figure.nombresComunes" :key="item.id">🍃{{item.nombre}}</span>
+                    </div>
+                </header>
+                <figure class="main-header__img">
+                    <a target="_blank" :href="figure.url"><img class="image" v-bind:src="figure.imagen" alt=""></a>
+                    <figcaption>
+                        
+                        <mark v-show="figure.autoctonoBool">Autóctono</mark>
+    
+                        <strong v-if="figure.valoracion>3">
+                            Muy interesante
+                        </strong>
+                        <strong v-else-if="figure.valoracion>1">
+                            Interesante
+                        </strong>
+                        <strong v-else="figure.valoracion>3">
+                            poco interesante interesante
+                        </strong>
+                    </figcaption>                    
+                </figure>
+                <ul class="campos">
+                    <li v-for="item in figure.detalles">{{item}}</li>
+                </ul>
+            </article>
+        </main>
     </div>
 </body>
 
