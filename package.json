@@ -1,0 +1,27 @@
+{
+  "name": "vue-getting-started",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode=production --color --watch",
+    "dev": "webpack --mode=development --entry ./src/index.js --output-path ./dev/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webferrol/VUE-GETTING-STARTED.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webferrol/VUE-GETTING-STARTED/issues"
+  },
+  "homepage": "https://github.com/webferrol/VUE-GETTING-STARTED#readme",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "sass": "^1.45.1",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1"
+  }
+}

@@ -20,7 +20,7 @@ body {
     }
 
     .main-header__title--h1{
-        font-size: clamp(1.5em,.8vw,1vw);
+        font-size: clamp(1.2em,.8vw,1vw);
         
     }
    
@@ -32,6 +32,12 @@ body {
            
         // }
     }
+
+.main-header__img img{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+}
 .comunes{
    
     display: flex;
