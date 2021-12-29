@@ -6,52 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Árboles senlleiras</title>
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
     <script src="https://unpkg.com/vue@next"></script>
-    <script defer src="main.js"></script>
+    
+    <script defer src="app.js"></script>
+    <script defer src="./components/TreeDisplay.js"></script>
+    
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="container">
         <header class="main-header">
-            <h1 class="main-header__title title" v-bind:title="titulo">
-                {{titulo}}
-            </h1>
-            <p class="main-header__description">
-                {{descripcion}}
-            </p>            
+            <header class="main-header__title">
+
+                <h1 class="main-header__title--h1 title" v-bind:title="titulo">
+                    <a target="_blank" :href="url">{{titulo}}</a><span> {{total}}</span>
+                </h1>
+                <p class="main-header__description">
+                    {{descripcion}}
+                </p>
+            </header>
         </header>
         <main class="main-content">
-            <article class="main-content content">
-                <header class="main-content__header">
-                    <h2 class="content__title">
-                        {{figure.especie}}
-                    </h2>
-                    <div role="list" class="comunes">
-                        <span role="listitem" v-for="item in figure.nombresComunes" :key="item.id">🍃{{item.nombre}}</span>
-                    </div>
-                </header>
-                <figure class="main-header__img">
-                    <a target="_blank" :href="figure.url"><img class="image" v-bind:src="figure.imagen" alt=""></a>
-                    <figcaption>
-                        
-                        <mark v-show="figure.autoctonoBool">Autóctono</mark>
-    
-                        <strong v-if="figure.valoracion>3">
-                            Muy interesante
-                        </strong>
-                        <strong v-else-if="figure.valoracion>1">
-                            Interesante
-                        </strong>
-                        <strong v-else="figure.valoracion>3">
-                            poco interesante interesante
-                        </strong>
-                    </figcaption>                    
-                </figure>
-                <ul class="campos">
-                    <li v-for="item in figure.detalles">{{item}}</li>
-                </ul>
-            </article>
+            <tree-display v-for="arbol in arboles" :figure="arbol" @actualizar-positivos="actualizarPositivos"></tree-display>
         </main>
     </div>
 </body>

@@ -1,0 +1,10 @@
+.container{
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    padding: clamp(1em,2vw, 3vw);
+    @media screen and (min-width:600px){   
+        display: grid;
+        grid-template-columns:var(--column-menu) calc(100% - var(--column-menu));
+        gap: clamp(1em, 1vw, 1vw); 
+    }
+}

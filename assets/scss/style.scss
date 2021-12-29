@@ -1,0 +1,45 @@
+@import '__variables';
+@import '__reset';    //reseteo general
+@import '__layout';  //Estructura de la página
+
+
+
+body {
+        background: rgb(39, 35, 37) none repeat scroll 0% 0%;
+        color: rgb(255, 246, 230);
+        padding: 0px;
+        font-feature-settings: "liga" 0;
+        line-height: 1.7;
+        font-family: var(--font-family-1);
+        font-weight: 300;
+        font-size: clamp(1rem,.8vw,.1vw);
+    }
+
+    .title{
+        font-variant: small-caps;
+    }
+
+    .main-header__title--h1{
+        font-size: clamp(1.5em,.8vw,1vw);
+        
+    }
+   
+    .main-content{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(var(--column-menu),1fr));
+        grid: 1em;
+        // .image{
+           
+        // }
+    }
+.comunes{
+   
+    display: flex;
+    row-gap: 1em;
+}
+.disabledButton{
+    background-color: #d8d8d8;
+}
+.activeButton{
+    background-color: tomato;
+}
